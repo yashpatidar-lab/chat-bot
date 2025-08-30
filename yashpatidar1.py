@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 import sqlite3
 from datetime import datetime
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Database setup
 def init_db():
@@ -42,5 +42,6 @@ def chat():
     
     return jsonify({"response": response})
 
-if _name_ == '_main_':
+if __name__ == '_main_':
+
     app.run(debug=True)
